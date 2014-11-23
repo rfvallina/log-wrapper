@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration  xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p %c - %m%n"/>
+        </layout>
+    </appender>
+
+<!-- 
+    <appender name="ROLLING" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="bifincan-web.log"/>
+        <param name="MaxFileSize" value="8096KB"/>
+        <param name="MaxBackupIndex" value="3"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p %c - %m%n"/>
+        </layout>
+    </appender>
+   -->
+   
+    <logger name="com.rfvallina">
+        <level value="${logger.level}"/>
+        <appender-ref ref="STDOUT" />
+     <!--   <appender-ref ref="ROLLING" />-->
+    </logger>
+
+ 
+	<!-- <logger name="org.springframework.jdbc">
+		<level value="warn" />
+	</logger>
+
+	<logger name="org.springframework.transaction">
+		<level value="warn" />
+	</logger>
+
+    <logger name="org.springframework.security">
+        <level value="warn" />
+    </logger> -->
+
+    <logger name="org.springframework">
+        <level value="warn" />
+    </logger>
+   
+    <logger name="org.springframework.batch">
+        <level value="error" />
+    </logger>
+    
+    <logger name="org.springframework.jdbc">
+        <level value="error" />
+    </logger>
+        
+    <logger name="com.mchange.v2">
+        <level value="error" />
+    </logger>    
+	    <logger name="freemarker">
+        <level value="error" />
+    </logger>  
+
+
+</log4j:configuration>
